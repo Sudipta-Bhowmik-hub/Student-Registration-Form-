@@ -1,0 +1,21 @@
+name: Software Metrics
+
+on: [push, pull_request]
+
+jobs:
+  metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install cloc
+        run: sudo apt-get install -y cloc
+
+      - name: Count LOC
+        run: cloc .
+      
+      - name: Run ESLint (optional)
+        run: |
+          npm install -g eslint
+          eslint .
