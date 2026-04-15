@@ -15,7 +15,4 @@ jobs:
       - name: Count LOC
         run: cloc .
       
-      - name: Run ESLint (optional)
-        run: |
-          npm install -g eslint
-          eslint .
+     
